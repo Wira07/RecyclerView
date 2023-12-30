@@ -6,23 +6,28 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.animation.AnimationUtils
+import android.widget.ShareActionProvider
 import android.widget.Toast
+import androidx.core.view.MenuItemCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.recyclerview.data.Food
+import com.example.recyclerview.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
     private lateinit var recyclerView: RecyclerView
     private lateinit var seaFood: RecyclerView
     private val list = ArrayList<Food>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         // Inisialisasi RecyclerView
         recyclerView = findViewById(R.id.seafood)
 
@@ -38,6 +43,7 @@ class MainActivity : AppCompatActivity() {
 
         list.addAll(getListHeroes())
         showRecyclerList()
+
     }
     private fun runItemAnimation() {
         val animation = AnimationUtils.loadAnimation(this, R.anim.item_animation)
