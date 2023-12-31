@@ -1,5 +1,6 @@
 package com.example.recyclerview
 
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
@@ -34,11 +35,17 @@ class ListFoodAdapter(private val listFood: ArrayList<Food>) : RecyclerView.Adap
             .into(holder.binding.imgItemPhoto)
         holder.binding.tvItemName.text = name
         holder.binding.tvItemDescription.text = description
-        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listFood[holder.adapterPosition]) }
+
+        holder.itemView.setOnClickListener {
+            val intentDetail = Intent(holder.itemView.context, Description::class.java)
+            intentDetail.putExtra("key_food", listFood[holder.adapterPosition])
+            holder.itemView.context.startActivity(intentDetail)
+        }
+//        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listFood[holder.adapterPosition]) }
     }
 
 //    override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
-//        val (name, description, photo) = listFood[position]
+//        val (name, Description, photo) = listFood[position]
 //        // Menambahkan animasi pada item
 //        val animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.item_animation)
 //        holder.itemView.startAnimation(animation)
@@ -47,9 +54,9 @@ class ListFoodAdapter(private val listFood: ArrayList<Food>) : RecyclerView.Adap
 //            .load(photo)
 //            .into(holder.imgPhoto)
 //        holder.binding.tvItemName.text = name
-//        holder.binding.tvItemDescription.text = description
+//        holder.binding.tvItemDescription.text = Description
 ////        holder.tvName.text = name
-////        holder.tvDescription.text = description
+////        holder.tvDescription.text = Description
 //        holder.itemView.setOnClickListener { onItemClickCallback.onItemClicked(listFood[holder.adapterPosition]) }
 //    }
 

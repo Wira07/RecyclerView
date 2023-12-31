@@ -8,6 +8,22 @@
     <string name="search">search</string>
     <string name="title_about">About</string>
     <string name="wira">Wira Sukma Saputra</string>
+    <string name="email">Wiralodrasaputra07@gmail.com</string>
+    <string name="deskripsi">Recent design graduate with a strong grasp of design principles and proficiency in tools like Adobe Photoshop, Adobe XD, and Figma. Committed to prioritizing user experience, I leverage user research for a user-centric approach. Eager to collaborate with design professionals, web developers, and product managers to create exceptional, value-driven products.</string>
+    <string name="share_description">Share</string>
+
+    <string-array name="gender">
+        <item>Perempuan</item>
+        <item>Laki - Laki</item>
+        <item>Laki - Laki</item>
+        <item>Laki - Laki</item>
+        <item>Perempuan</item>
+        <item>Perempuan</item>
+        <item>Perempuan</item>
+        <item>Laki - Laki</item>
+        <item>Perempuan</item>
+        <item>Perempuan</item>
+    </string-array>
 
     <string-array name="data_name">
         <item>Ahmad Dahlan</item>
@@ -47,14 +63,14 @@
     </string-array>
 
     <!--    <integer-array name="data_photo">-->
-<!--        <item>@drawable/beef_stir_fry_with_broccoli</item>-->
-<!--        <item>@drawable/four_cheese_delight</item>-->
-<!--        <item>@drawable/margherita_flatbread</item>-->
-<!--        <item>@drawable/margherita</item>-->
-<!--        <item>@drawable/original_crispy_chicken</item>-->
-<!--        <item>@drawable/shrimp_scampi</item>-->
-<!--        <item>@drawable/teriyaki_chicken_wings</item>-->
-<!--        <item>@drawable/vegetarian_pad_thai</item>-->
-<!--        <item>@drawable/spinach_and_feta_stuffed_chicken</item>-->
-<!--    </integer-array>-->
+    <!--        <item>@drawable/beef_stir_fry_with_broccoli</item>-->
+    <!--        <item>@drawable/four_cheese_delight</item>-->
+    <!--        <item>@drawable/margherita_flatbread</item>-->
+    <!--        <item>@drawable/margherita</item>-->
+    <!--        <item>@drawable/original_crispy_chicken</item>-->
+    <!--        <item>@drawable/shrimp_scampi</item>-->
+    <!--        <item>@drawable/teriyaki_chicken_wings</item>-->
+    <!--        <item>@drawable/vegetarian_pad_thai</item>-->
+    <!--        <item>@drawable/spinach_and_feta_stuffed_chicken</item>-->
+    <!--    </integer-array>-->
 </resources>

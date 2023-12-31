@@ -6,9 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.animation.AnimationUtils
-import android.widget.ShareActionProvider
 import android.widget.Toast
-import androidx.core.view.MenuItemCompat
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -81,15 +79,15 @@ class MainActivity : AppCompatActivity() {
     private fun getListHeroes(): ArrayList<Food> {
         val dataName = resources.getStringArray(R.array.data_name)
         val dataDescription = resources.getStringArray(R.array.data_description)
-//        val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
         val dataPhoto = resources.getStringArray(R.array.data_photo)
-        val listHero = ArrayList<Food>()
+        val dataGender = resources.getStringArray(R.array.gender)
+        val listFood = ArrayList<Food>()
+
         for (i in dataName.indices) {
-            val hero = Food(dataName[i], dataDescription[i], dataPhoto[i])
-//            val hero = Food(dataName[i], dataDescription[i], dataPhoto.getResourceId(i, -1))
-            listHero.add(hero)
+            val food = Food(dataName[i], dataDescription[i], dataPhoto[i], dataGender[i])
+            listFood.add(food)
         }
-        return listHero
+        return listFood
     }
 
 
