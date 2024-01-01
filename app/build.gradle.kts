@@ -44,7 +44,7 @@ dependencies {
 
     // Glice
     implementation("com.github.bumptech.glide:glide:4.15.1")
-
+    implementation("com.squareup.picasso:picasso:2.8")
     implementation("de.hdodenhof:circleimageview:3.1.0")
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")

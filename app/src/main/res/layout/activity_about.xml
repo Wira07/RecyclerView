@@ -46,6 +46,7 @@
         app:layout_constraintTop_toBottomOf="@+id/wira"/>
 
     <TextView
+        android:id="@+id/kelengkapan"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/deskripsi"

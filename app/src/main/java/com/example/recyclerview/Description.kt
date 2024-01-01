@@ -9,19 +9,20 @@ import com.example.recyclerview.data.Food
 import com.example.recyclerview.databinding.ActivityDescriptionBinding
 
 class Description : AppCompatActivity() {
-
-
     companion object {
         const val DATA_FOOD = "extra_data"
+        const val Key_Food = "key_food"
     }
+
     private lateinit var binding: ActivityDescriptionBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDescriptionBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+//        val food: Food? = intent.getParcelableExtra(DATA_FOOD)
+        val food: Food? = intent.getParcelableExtra("key_food")
 
-        val food: Food? = intent.getParcelableExtra(DATA_FOOD)
         if (food != null) {
             val resourceId = resources.getIdentifier(food.photo, "drawable", packageName)
 
@@ -31,19 +32,17 @@ class Description : AppCompatActivity() {
                 // Handle the case where the resource is not found
                 // You might want to set a default image or show an error message
             }
-
             binding.description.text = food.description
             binding.fullName.text = food.name
             binding.gender.text = food.gender
         }
 
-//        val Food = if (Build.VERSION.SDK_INT >= 33) {
-//            intent.getParcelableExtra<Food>(Key_Food, Food::class.java)
-//        } else {
-//            @Suppress("DEPRECATION")
-//            intent.getParcelableExtra<Food>(key_food)
-//        }
-
+        val Food = if (Build.VERSION.SDK_INT >= 33) {
+            intent.getParcelableExtra<Food>(Key_Food, Food::class.java)
+        } else {
+            @Suppress("DEPRECATION")
+            intent.getParcelableExtra<Food>(Key_Food)
+        }
         binding.shareButton.setOnClickListener { shareButtonClick() }
     }
     private fun shareButtonClick() {

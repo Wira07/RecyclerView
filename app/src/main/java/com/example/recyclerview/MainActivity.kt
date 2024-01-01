@@ -90,7 +90,6 @@ class MainActivity : AppCompatActivity() {
         return listFood
     }
 
-
     private fun showSelectedFood(hero: Food) {
         Toast.makeText(this, "Kamu memilih " + hero.name, Toast.LENGTH_SHORT).show()
     }
@@ -102,6 +101,14 @@ class MainActivity : AppCompatActivity() {
 
         listFoodAdapter.setOnItemClickCallback(object : ListFoodAdapter.OnItemClickCallback {
             override fun onItemClicked(data: Food) {
+
+                val intent = Intent(
+                    this@MainActivity,
+                    Description::class.java
+                )
+                intent.putExtra(Description.DATA_FOOD, data)
+                startActivity(intent)
+
                 showSelectedFood(data)
             }
         })
